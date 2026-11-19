@@ -1,4 +1,18 @@
-import { motion } from "motion/react";
+import { motion } from "motion/react"
+
+const professionalExperience = {
+  role: "Media Analyst Intern",
+  org: "Pusat Informasi dan Humas UIN Jakarta",
+  period: "Aug 2026 – Dec 2026",
+  category: "Professional Internship",
+  categoryColor: "#22D3C7",
+  points: [
+    "Monitored and compiled external media coverage related to UIN Jakarta, ensuring article sources, titles, links, and key topics were recorded accurately.",
+    "Classified coverage by media tier, source credibility, sentiment, tone, keywords, and issue type to build a consistent media monitoring dataset.",
+    "Developed an interactive Google Looker Studio dashboard to visualize publication volume, sentiment trends, and media distribution for monthly evaluation.",
+    "Produced data-driven conclusions and communication recommendations to support institutional reputation and public relations strategies.",
+  ],
+}
 
 const experiences = [
   {
@@ -67,14 +81,17 @@ const experiences = [
       "Prepared detailed financial reports each period, ensuring full transparency and accountability in fund usage.",
     ],
   },
-];
+]
 
 export default function Experience() {
   return (
     <section id="experience" className="py-24 relative">
       <div
         className="absolute top-0 left-0 right-0 h-px"
-        style={{ background: "linear-gradient(90deg, transparent, rgba(34,211,199,0.3), transparent)" }}
+        style={{
+          background:
+            "linear-gradient(90deg, transparent, rgba(34,211,199,0.3), transparent)",
+        }}
       />
 
       <div className="max-w-6xl mx-auto px-6">
@@ -87,7 +104,11 @@ export default function Experience() {
         >
           <p
             className="mb-2 text-sm tracking-widest"
-            style={{ color: "#FF5E5E", fontFamily: "'DM Sans', sans-serif", fontWeight: 600 }}
+            style={{
+              color: "#FF5E5E",
+              fontFamily: "'DM Sans', sans-serif",
+              fontWeight: 600,
+            }}
           >
             EXPERIENCE
           </p>
@@ -99,7 +120,7 @@ export default function Experience() {
               color: "#E8E8FF",
             }}
           >
-            Organizations &{" "}
+            Professional{" "}
             <span
               style={{
                 background: "linear-gradient(135deg, #FF5E5E, #FFB347)",
@@ -108,16 +129,145 @@ export default function Experience() {
                 backgroundClip: "text",
               }}
             >
-              Community
+              Experience
             </span>
           </h2>
+        </motion.div>
+
+        <motion.article
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.55 }}
+          className="relative mb-20 overflow-hidden rounded-2xl p-6 md:p-8"
+          style={{
+            background:
+              "linear-gradient(135deg, rgba(34,211,199,0.11), rgba(123,97,255,0.05))",
+            border: "1px solid rgba(34,211,199,0.22)",
+            boxShadow: "0 24px 70px rgba(0,0,0,0.18)",
+          }}
+        >
+          <div
+            className="absolute bottom-0 left-0 top-0 w-1"
+            style={{
+              background:
+                "linear-gradient(180deg, #22D3C7, rgba(123,97,255,0.7))",
+            }}
+          />
+
+          <div className="flex flex-col gap-5">
+            <div className="flex flex-col justify-between gap-4 md:flex-row md:items-start">
+              <div>
+                <span
+                  className="mb-3 inline-flex rounded-full px-3 py-1 text-xs"
+                  style={{
+                    background: `${professionalExperience.categoryColor}18`,
+                    color: professionalExperience.categoryColor,
+                    fontFamily: "'DM Sans', sans-serif",
+                    fontWeight: 700,
+                  }}
+                >
+                  {professionalExperience.category}
+                </span>
+                <h3
+                  style={{
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    fontWeight: 800,
+                    color: "#E8E8FF",
+                    fontSize: "clamp(1.15rem, 2vw, 1.4rem)",
+                  }}
+                >
+                  {professionalExperience.role}
+                </h3>
+                <p
+                  className="mt-1"
+                  style={{
+                    fontFamily: "'DM Sans', sans-serif",
+                    color: professionalExperience.categoryColor,
+                    fontSize: "0.9rem",
+                    fontWeight: 600,
+                  }}
+                >
+                  {professionalExperience.org}
+                </p>
+              </div>
+
+              <span
+                className="w-fit flex-shrink-0 rounded-full px-3 py-1.5 text-xs"
+                style={{
+                  background: "rgba(255,255,255,0.05)",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  color: "#9A9ABB",
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontWeight: 600,
+                }}
+              >
+                {professionalExperience.period}
+              </span>
+            </div>
+
+            <ul className="grid gap-3 md:grid-cols-2">
+              {professionalExperience.points.map((point) => (
+                <li
+                  key={point}
+                  className="flex items-start gap-3"
+                  style={{
+                    color: "#9A9ABB",
+                    fontFamily: "'DM Sans', sans-serif",
+                    fontSize: "0.86rem",
+                    lineHeight: 1.7,
+                  }}
+                >
+                  <span
+                    className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full"
+                    style={{
+                      background: professionalExperience.categoryColor,
+                    }}
+                  />
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </motion.article>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-10"
+        >
+          <p
+            className="mb-2 text-sm tracking-widest"
+            style={{
+              color: "#7B61FF",
+              fontFamily: "'DM Sans', sans-serif",
+              fontWeight: 600,
+            }}
+          >
+            LEADERSHIP & ACTIVITIES
+          </p>
+          <h3
+            style={{
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontWeight: 800,
+              color: "#E8E8FF",
+              fontSize: "clamp(1.45rem, 2.5vw, 2rem)",
+            }}
+          >
+            Organizations & Community
+          </h3>
         </motion.div>
 
         <div className="relative">
           {/* Timeline line */}
           <div
             className="absolute left-4 md:left-6 top-0 bottom-0 w-px"
-            style={{ background: "linear-gradient(180deg, #7B61FF, #22D3C7, #FF5E5E, transparent)" }}
+            style={{
+              background:
+                "linear-gradient(180deg, #7B61FF, #22D3C7, #FF5E5E, transparent)",
+            }}
           />
 
           <div className="flex flex-col gap-8 pl-12 md:pl-16">
@@ -152,12 +302,14 @@ export default function Experience() {
                     border: "1px solid rgba(255,255,255,0.06)",
                   }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLDivElement).style.borderColor = `${exp.categoryColor}30`;
-                    (e.currentTarget as HTMLDivElement).style.background = `${exp.categoryColor}06`;
+                    ;(e.currentTarget as HTMLDivElement).style.borderColor = `${exp.categoryColor}30`
+                    ;(e.currentTarget as HTMLDivElement).style.background = `${exp.categoryColor}06`
                   }}
                   onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.06)";
-                    (e.currentTarget as HTMLDivElement).style.background = "rgba(255,255,255,0.03)";
+                    ;(e.currentTarget as HTMLDivElement).style.borderColor =
+                      "rgba(255,255,255,0.06)"
+                    ;(e.currentTarget as HTMLDivElement).style.background =
+                      "rgba(255,255,255,0.03)"
                   }}
                 >
                   <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
@@ -241,5 +393,5 @@ export default function Experience() {
         </div>
       </div>
     </section>
-  );
+  )
 }

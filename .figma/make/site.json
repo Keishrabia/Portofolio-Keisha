@@ -1,0 +1,11 @@
+{
+  "title": "Portofolio Keisha",
+  "description": "Create stunning, responsive portfolio websites that showcase your skills and experience, tailored for both mobile and desktop users.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

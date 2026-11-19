@@ -26,9 +26,19 @@ const contacts = [
 ];
 
 const socials = [
-  { icon: Github, label: "GitHub", href: "#", color: "#E8E8FF" },
-  { icon: Linkedin, label: "LinkedIn", href: "#", color: "#0A66C2" },
-  { icon: Instagram, label: "Instagram", href: "#", color: "#E1306C" },
+  { icon: Github, label: "GitHub", href: "https://github.com/Keishrabia", color: "#E8E8FF" },
+  {
+    icon: Linkedin,
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/keisha-mutiara-qalbia",
+    color: "#0A66C2",
+  },
+  {
+    icon: Instagram,
+    label: "Instagram",
+    href: "https://www.instagram.com/keishrabia",
+    color: "#E1306C",
+  },
 ];
 
 export default function Contact() {
@@ -157,6 +167,8 @@ export default function Contact() {
                 <a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-200"
                   style={{
